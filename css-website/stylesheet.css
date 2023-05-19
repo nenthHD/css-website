@@ -21,26 +21,32 @@
   grid-auto-flow: row;
 }
 
-.Erklarung { grid-area: 1 / 2 / 3 / 6;
-z-index:0; }
+.Erklarung { grid-area: 1 / 2 / 3 / 6; 
+  position: relative;
+  background: #0468BF;}
 
-.fotos-code { grid-area: 3 / 2 / 5 / 3; }
+.fotos-code { grid-area: 3 / 2 / 5 / 3;
+  position: relative;
+z-index: 0; }
 
-.css-code { grid-area: 3 / 3 / 5 / 6; }
+.css-code { grid-area: 3 / 3 / 5 / 6;
+position: relative;
+z-index: 1;}
 
 .tr-yourself { grid-area: 5 / 2 / 8 / 6; }
 
 .side-bar { grid-area: 1 / 1 / 8 / 2; 
   background: linear-gradient(90deg, rgba(15,200,247,1) 0%, rgba(42,53,197,1) 35%, rgba(4,104,191,1) 100%);}
 
-.right-side { grid-area: 1 / 5 / 8 / 6; 
+.right-side { grid-area: 1 / 5 / 8 / 6;
+  position: relative;
   z-index: 0;
   background: linear-gradient(90deg, rgba(4,104,191,1) 0%, rgba(42,53,197,1) 70%, rgba(15,200,247,1) 100%);}
 
 
 .sidebar{
   height: 100%;
-  width: 0;
+  width: 0%;
   position: fixed;
   top: 0;
   left: 0;
@@ -55,17 +61,18 @@ z-index:0; }
   position: fixed;
   top: 25px;
   background-color: #2A40BF;
+  max-width: 139px;
 }
 
-
 .img-wiki,.img-wiki-css{
-  width: 100%;
+  width: 90%;
+  position: relative;
   max-width: 763px;
   padding: 6PX;
   background-color: #0fc8f7;
   padding-left: 9px;
-  z-index: 3 ;
   clear: both ;
+  z-index: 3;
 } 
 .img-wiki{
  float:left;
@@ -79,7 +86,7 @@ z-index:0; }
   background-color: #2A40BF;
 }
 .sidebar a {
-  padding: 8px 8px 8px 32px;
+  padding: 8px 8px 8px 20px;
   text-decoration: none;
   font-size: 25px;
   color: #ffffff;
@@ -107,6 +114,7 @@ span,p,h1,h2,ul,a,li{
   color: #ffffff;
   font-family: 'League Spartan', sans-serif ;
 }
+
 h1{
   background-color: #2A40BF;
   position: relative;
@@ -114,15 +122,15 @@ h1{
   
 }
 .p-foto{
-  z-index: 4;
   position: relative;
   float:left;
   background-color: #0fc8f7;
+  z-index: 4;
 }
 .p-titel{
-  z-index: 3;
-  position: relative;
   float:left;
+  position: relative;
+  z-index:  5;
 }
 .p-anklickst{
   clear: left;
@@ -154,6 +162,7 @@ h1{
     width: 70%;
     height: auto;
   }
+
 }
 
 @media only screen and (max-width:800px) and (min-width: 100px) {
@@ -163,11 +172,11 @@ h1{
 }
 @media (min-width: 1200px) {
   h1 {
-    font-size: 50px;
+    font-size: 40px;
   }
 }
 @media (max-width: 1199.98px) {
   h1 {
-    font-size: 30px;
+    font-size: 25px;
   }
 }
