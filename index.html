@@ -1,98 +1,301 @@
-<!DOCTYPE  html>
+<!DOCTYPE html>
 <html>
-<head>
-<title>css und html erklarung </title>
-<link rel="icon"  type="image/png" sizes="128 X 64" href="css-website/css-icon.png">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@900&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="css-website/stylesheet.css">
-</head>
-<body>
-    <div class="container" id="container">
-      
-        <div class="Erklarung" id="erklarung-id">
-          <h1>-Was ist CSS</h1> 
-          <br>
-         <p class="p-titel">Es steht für Cascading Style Sheets <br> Mann benutzt es um Websites zu designen und die HTML Tags zu stylen</p>
+    <head>
+        <title>Informatik</title>
+        <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@900&display=swap" rel="stylesheet">
+        <style>
+            *{
+            margin: 3px;}
+        html, body , .container {
+         height: 100%;
+         margin: 0;
+         background-color: #2a8bbf;
+}
 
-        <img id="wiki1" src="css-website/wikipedia-with-css.png"  class="img-wiki" > 
 
-        <p  class="p-foto">Diese Website sieht so mit CSS aus </p>
-        
-          
-        <img id="wiki2" src="css-website/wikipedia-without-css.png"   class="img-wiki-css" >
+            .container {  display: grid;
+            grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: auto  auto auto auto auto auto auto auto auto;
+            margin-right: 2em;
+            margin-left: 2em;
+            background-color: #2a8bbf;
+            gap: 0px 0px;
+            grid-auto-flow: row;
+            grid-template-areas:
+               "Erklarung-2  Erklarung Erklarung Erklarung Erklarung Erklarung Erklarung Erklarung Erklarung"
+               "Erklarung-2 Erklarung Erklarung Erklarung Erklarung Erklarung Erklarung Erklarung Erklarung"
+               "cs-video css-dokument css-dokument css-dokument css-dokument css-dokument css-dokument css-dokument css-dokument"
+               "cs-video css-dokument css-dokument css-dokument css-dokument css-dokument css-dokument css-dokument css-dokument"
+               "cs-video css-dokument-2 css-dokument-2 css-dokument-2 css-dokument-2 css-dokument-2 css-dokument-2 css-dokument-2 css-dokument-2"
+               "cs-fotos cs-fotos css-explain css-explain css-explain css-explain css-explain css-explain css-explain"
+               "cs-fotos cs-fotos css-explain css-explain css-explain css-explain css-explain css-explain css-explain"
+               "cs-fotos cs-fotos css-explain css-explain css-explain css-explain css-explain css-explain css-explain"
+               "advanced-tipps advanced-tipps advanced-tipps try-yourself try-yourself try-yourself try-yourself try-yourself try-yourself"
+               "advanced-tipps advanced-tipps advanced-tipps try-yourself try-yourself try-yourself try-yourself try-yourself try-yourself";
+}
 
-        <p class="p-foto">Website ohne CSS <br> Unterschiede auf diesen Websiten: <br>
-           -Standard Font (Times New Roman) und Font-Size <br>
-            -Original Größe von Bildern <br>
-            -Standard Static position <br>
-            (Alle Elemente folgen  der Reihenfolge des HTML-Codes) <br>
+.Erklarung { grid-area: Erklarung;
+max-height: 1000px; 
+margin-bottom: 10.5rem;
+position: relative;
+}
+
+.css-dokument { grid-area: css-dokument; 
+  max-height: 1000px; }
+
+.cs-video { grid-area: cs-video; 
+  max-height: 1000px; 
+  margin-right: 2rem;
+}
+
+.css-dokument-2 { grid-area: css-dokument-2; }
+
+.Erklarung-2 { grid-area: Erklarung-2; 
+  background-color: #2a8bbfa4;}
+
+.css-explain { grid-area: css-explain; }
+
+.try-yourself { grid-area: try-yourself; }
+
+.cs-fotos { grid-area: cs-fotos; }
+
+.advanced-tipps { grid-area: advanced-tipps; }
+
+h1{
+color: white;
+background-color: #2a40bf;
+font-family: 'League Spartan', sans-serif;
+font-size:2vw;
+text-align: center;
+box-shadow: #00000023 1px 10px;}
+.h1{
+  font-size:3vw;}
+p{
+color: white;
+background-color:#3d51bf;
+font-family: 'League Spartan', sans-serif;
+font-size:1vw;
+max-width:fit-content;
+border: #2a40bf solid 0.7rem;
+padding: 7px;
+box-shadow: #00000023 1px 10px;
+float:left;
+margin: 1rem;}
+
+.wiki1 , .wiki2{
+    max-height: 336px;
+    height: auto;  
+    clear: both;
+    float: inline-end;
+    background-color: #2a40bf;
+    padding: 0.7rem;
+    box-shadow: #00000023 1px 10px;
+    z-index: 3;
+/* all below just for navigationbar*/ 
+}
+.sidebar{
+  height: 100%;
+  width: 0%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #2A40BF;
+  overflow-x: hidden;
+  transition: 0.7s;
+  padding-top: 60px;
+}
+
+.logo-navbar{
+  padding-left: 30px;
+  background-color: #2A40BF;
+}
+.img-logo{
+  position: fixed;
+  top: 25px;
+  left: 0px;
+  background-color: #2A40BF;
+  max-width: 139px;
+  z-index: 2;
+}
+.sidebar a {
+  padding: 8px 8px 8px 20px;
+  border: #2A40BF 10px solid;
+  text-decoration: none;
+  font-size: 25px;
+  color: #ffffff;
+  background-color: #3d51bf;
+  display: block;
+  transition: 0.3s;
+  font-family: 'League Spartan', sans-serif;
+}
+.sidebar a:hover {
+  background-color: #4cc2ca;
+  color: rgb(255, 255, 255);
+}
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+} /* here it ends  */ 
+h2 , a , h3, li , ul , span{
+color: #ffffff;
+font-family: 'League Spartan', sans-serif;
+}
+h2{
+background-color: #0df6f0;
+font-size:1.7vw;}
+ul{
+  margin: 1rem;
+  font-size:1vw;
+  background-color: #3d51bf;
+  box-shadow: #00000023 1px 10px;
+  border: #2a40bf solid 0.7rem;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: inline;
+  box-shadow: #00000023 1px 10px;
+}
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="Erklarung" id="erklarung-id">  <!-- erklarung div  start -->
+                <section>
+                    <h1 class="h1"> Websites mit CSS/ohne CSS</h1>
+                    
+                    <p style="background-color: #2A40BF;float: right;">Hier siehst du eine Website mit CSS und eine ohne <br> 
+                      Drücke auf die Bilder dann kannst noch mehr sehen <br>
+                      Das obere ist mit CSS und das untere ohne</p>
+
+                    <img id="wiki1" class="wiki1" src="css-website/wikipedia-with-css.png" alt="kts">
+
+
+
+                      <img id="wiki2" class="wiki2"src="css-website/wikipedia-without-css.png" alt="kts2" >
+
+
+ 
+                </section>
+
+            </div>     
+            <div class="Erklarung-2">
+              <section>
+                <h1 class="h1">Was ist CSS</h1>
+                <p>
+                  Es steht für Cascading Style Sheets  <br>
+                  Mann benutzt es um Websites zu designen  <br>
+                  und die HTML Tags zu stylen.
               </p>
-        <br>
-        <p  class="p-anklickst" style="margin-bottom: 3%;">Wenn du die Bilder anklickst siehst du auch eine andere Website</p>
-        </div>
-        <div class="fotos-code">
-          <h1 style="margin-bottom: 5%;">-</h1> 
-        <video controls autoplay src="css-website/css-ordner.mp4" style="width: 100%;"></video>
-        <br>
-      <video  controls  autoplay src="css-website/css-verbinden.mp4" style="width: 100%; padding-top: 15%;"></video></div>
 
-        <div class="css-code">
-          <div id="CSS-Datei-id">
-          <H1 style="margin-bottom: 3%;">-Wie erstelle ich eine CSS Dokument</H1>
-          <p>Es gibt drei Wege CSS zu benutzen</p>
-          <br>
-          <p>Erster Weg :Erstelle eine Dokument nur für CSS </p>
-          <br> 
-          <br>
-          <p>Du müsst immer als stylesheet.css stehen haben alles davor kannst du ändern.</p>
-          <br>
-          <p >Ich würde dir auch empfehlen CSS Datei in den  gleichen Ordner <br> zu haben wie die HTML Datei ist  </p>
-        </div>
-        <br>
-        <br>
-        <br>
-        <h1 style="margin-bottom: 4%;margin-top: 4%;">-So verbindest du CSS mit dem HTML</h1>
-        <p>Schreibe im HEAD des HTML Dokuments das Element <span style="color: aqua;">Link</span> und drücke darauf </p>
-        <br>
-        <p> <span style="color: aqua;">Rel:</span> legt fest für was das Dokument gebraucht wird.
-        <br> Im diesen Fall brauchen wir <span style="color: aqua;">Stylesheet</span> um CSS zu benutzen.
-        <br> <br> <span style="color: aqua;">Href:</span> sagt wo das Dokument zu finden ist. Im diesen Fall ist das HTML Dokument im gleichen Ordner wie das CSS Dokument</p>
-        </div>
+                  <p>
+                      Was kann CSS alles machen ? <br>
+                      Du kannst : <br>
+                      -Größe von Elementen ändern <br>
+                      -Position von Elementen bestimmen <br>
+                      -Layout für die Website machen (Grid,Flex) <br>
+                      -Elemente Farbe geben <br>
+                      -Responsive Webdesign <br> 
+                      (diese Website ist auch Responsive) <br>
+                      -Keyframes benutzen um animation zu machen <br>
+                       -Und noch mehr ...
+                  </p>
+              </section>
+            </div>   <!-- erklarung div  ende -->
 
-        <div class="tr-yourself"><p>awdd</p></div>
+            <div class="css-dokument" id="CSS-Datei-id">
+              <section>
+                <h1 style="text-align: left;">-Wie erstelle ich eine CSS Dokument</h1>
+                <ul style="margin: 3.5em;">
 
-        <div class="right-side"></div>
+                  Es gibt drei Wege CSS zu benutzen <br>
 
-             <div class="side-bar"></div>
-         <div id="navbar" class="sidebar">
+                  <span style="color: aqua;">Erster Weg : </span> <br>
+                  Erstelle eine Dokument nur für CSS <br>
+                  Du müsst immer als <span style="color: aqua;">.css </span>stehen haben alles davor kannst du ändern. <br>
+                  Ich würde dir auch empfehlen CSS Datei in den gleichen Ordner <br>
+                  zu haben wie die HTML Datei ist <br>
 
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-          <span style="font-size:25px;cursor:pointer" onclick="openNav()"> <picture> 
-            <source media="(min-width:1200px)" srcset="css-website/logo-css.png">
-            <source media="(max-width:1199px)" srcset="css-website/logo-css-vertikal.png" >
-            <img id="logo" class="img-logo" src="css-website/logo-css.png"  > </picture></span>
-            <img class="logo-navbar" src="css-website/css-icon.png" height="96" >
-            <a href="#erklarung-id">Erklarung</a>
-            <br>
-            <a href="#CSS-Datei-id">css-datei erstellen</a>
-            <br>
-            <a href="#css-id">css-code</a>
-            <br>
-            <a href="#test-id">Teste-dich</a>
-            <script src="css-website/navbar-javascript.js"></script>
-            <script src="css-website/image-change-javascript.js" ></script>
-            <script src="css-website/"></script>
+                </ul>
+                <h1 style="text-align: left;">-So verbindest du CSS Dokument mit dem HTML</h1>
+                <ul>
 
-        </div>
-      </div>
+                    Schreibe im  <span style="color: aqua;"><Head></Head></span>des HTML Dokuments das Element <span style="color: aqua;">Link</span> und drücke darauf
+                    <br>
+                    <span style="color: aqua;">Rel:</span> legt fest für was das Dokument gebraucht wird.
+                    <br> Im diesen Fall brauchen wir <span style="color: aqua;">Stylesheet</span> um CSS zu benutzen.
+                    <br> <br> <span style="color: aqua;">Href:</span> sagt wo das Dokument zu finden ist. Im diesen Fall ist das HTML Dokument im gleichen Ordner wie das CSS Dokument
 
+                </ul>
 
+              </section>
 
-</body>
+            </div>
 
+            <div class="cs-video" >
 
+              <h2>Video zum erstellen von CSS Dokument</h2>
+              <video controls autoplay src="css-website/css-ordner.mp4" style="width: 100%;background-color: #0df6f0; padding: 10px; box-shadow: #00000023 1px 10px;"></video>
+              <h2>Video zum Verbinden</h2>
+              <video controls src="css-website/css-verbinden.mp4" style="width: 100%;background-color: #0df6f0; padding: 10px; box-shadow: #00000023 1px 10px;"></video>
+              <h2>Beide Dinge im ein Video</h2>
+              <video controls src="css-website/css-in-html-beides.mp4" style="width: 100%;background-color: #0df6f0; padding: 10px; box-shadow: #00000023 1px 10px;"></video>
+
+            </div>
+            <div class="css-dokument-2">
+                <h1 style="text-align: left;">-CSS im HTML Dokument</h1>
+                <ul>
+                    <span style="color: aqua;">Zweiter Weg : </span> <br> 
+                        Du musst um CSS im HTML selbst zu benuzten im <span style="color: aqua;">head </span>
+                         style schreiben 
+                </ul>
+                <ul>
+                    <span style="color: aqua;">Dritter Weg : </span>
+                    Du kannst auch im Element style schreiben <br>
+                     (solltest du aber nur für die seltensten situationen öft benuzten)
+
+                </ul>
+            </div>
+            <div class="css-explain">
+              <h1 style="margin-bottom: 1em;">CSS Basics</h1>
+              <img  src="css-website/css-rule.de.png" alt="css" style="background-color: #ffffffa4;border: #0d7af6 10px solid;float: right;">
+              <p >Ein<span style="color: #0df6f0;">Selektor</span>sagt welches element verändert wird <br>
+                                   Selektoren können  <span style="color: #0df6f0;">class , typ , id</span> sein <br>
+                                   Du kannst auch mehrere Selektoren schreiben <br>
+                                   Die Eigenschaft die verändert werden soll <br>
+                                   Wert zu was es genau verändert wird. 
+                                </p>
+            </div>
+            <div class="try-yourself">try</div>
+            <div class="cs-fotos"><h1>CSS Styles</h1>
+             <p>Hier sind ein paar beispiel styles: <span style="color:#0df6f0;"> <br> color ändert farbe<br> width ändert breite<br>height ändert höhe <br> font-size ändert größe der Schrift 
+             <br>margin macht raum um das Element
+             <br>(kannst spezifisch auch margin-top,margin-bottom,margin-right benutzen )</span></p></div>
+            <div class="advanced-tipps">tipps</div>
+          </div>
+          <div id="navbar" class="sidebar">
+
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <span style="font-size:25px;cursor:pointer" onclick="openNav()"> <picture> 
+              <source media="(min-width:1200px)" srcset="css-website/logo-css.png">
+              <source media="(max-width:1199px)" srcset="css-website/logo-css-vertikal.png" >
+              <img id="logo" class="img-logo" src="css-website/logo-css.png"  > </picture></span>
+              <img class="logo-navbar" src="css-website/css-icon.png" height="96" >
+              <a href="#erklarung-id">Erklarung</a>
+              <br>
+              <a href="#CSS-Datei-id">css-datei erstellen</a>
+              <br>
+              <a href="#css-id">css-code</a>
+              <br>
+              <a href="#test-id">Teste-dich</a>
+              <script src="css-website/navbar-javascript.js"></script>
+              <script src="css-website/image-change-javascript.js" ></script>
+              <script src="css-website/screen-sze.js"></script>
+  
+          </div>
+    </body>
 </html>
