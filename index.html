@@ -6,22 +6,25 @@
         <style>
             *{
             margin: 3px;}
+
         html, body , .container {
          height: 100%;
          margin: 0;
          background-color: #2a8bbf;
+         position: relative;
+         z-index: 0;
 }
 
 
             .container {  display: grid;
-            grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-            grid-template-rows: auto  auto auto auto auto auto auto auto auto;
-            margin-right: 2em;
-            margin-left: 2em;
+            grid-template-columns:   3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: auto  auto auto auto auto auto auto auto auto auto auto;
             background-color: #2a8bbf;
             gap: 0px 0px;
             grid-auto-flow: row;
             grid-template-areas:
+               "Landing-page Landing-page Landing-page Landing-page Landing-page Landing-page Landing-page Landing-page Landing-page"
+               "Landing-page Landing-page Landing-page Landing-page Landing-page Landing-page Landing-page Landing-page Landing-page"
                "Erklarung-2  Erklarung Erklarung Erklarung Erklarung Erklarung Erklarung Erklarung Erklarung"
                "Erklarung-2 Erklarung Erklarung Erklarung Erklarung Erklarung Erklarung Erklarung Erklarung"
                "cs-video css-dokument css-dokument css-dokument css-dokument css-dokument css-dokument css-dokument css-dokument"
@@ -33,34 +36,51 @@
                "advanced-tipps advanced-tipps advanced-tipps try-yourself try-yourself try-yourself try-yourself try-yourself try-yourself"
                "advanced-tipps advanced-tipps advanced-tipps try-yourself try-yourself try-yourself try-yourself try-yourself try-yourself";
 }
+.Landing-page { grid-area: Landing-page; height: 920px ;
+  background-image: url("layered-waves.svg");
+  margin-right: 0em;
+margin-left: 0px;
+display: flex;}
 
 .Erklarung { grid-area: Erklarung;
 max-height: 1000px; 
 margin-bottom: 10.5rem;
 position: relative;
+margin-right: 2em;
+margin-left: 2em;
 }
 
 .css-dokument { grid-area: css-dokument; 
-  max-height: 1000px; }
+  max-height: 1000px; 
+  margin-right: 2em;}
 
 .cs-video { grid-area: cs-video; 
   max-height: 1000px; 
-  margin-right: 2rem;
+  margin-right: 2em;
+  margin-left: 2em;
 }
 
-.css-dokument-2 { grid-area: css-dokument-2; }
+.css-dokument-2 { grid-area: css-dokument-2;
+  margin-right: 2em; }
 
 .Erklarung-2 { grid-area: Erklarung-2; 
-  background-color: #2a8bbfa4;}
+  background-color: #2a8bbfa4;
+  margin-left: 2em;}
+.css-explain { grid-area: css-explain;
+  margin-right: 2em; }
 
-.css-explain { grid-area: css-explain; }
+.try-yourself { grid-area: try-yourself; 
+  margin-right: 2em;}
 
-.try-yourself { grid-area: try-yourself; }
+.cs-fotos { grid-area: cs-fotos;
+  margin-left: 2em; }
 
-.cs-fotos { grid-area: cs-fotos; }
+.advanced-tipps { grid-area: advanced-tipps;
+  margin-right: 2em; }
 
-.advanced-tipps { grid-area: advanced-tipps; }
 
+
+	/* all below just for font styles */ 
 h1{
 color: white;
 background-color: #2a40bf;
@@ -77,12 +97,73 @@ font-family: 'League Spartan', sans-serif;
 font-size:1vw;
 max-width:fit-content;
 border: #2a40bf solid 0.7rem;
-padding: 7px;
+padding: 1.1em;
 box-shadow: #00000023 1px 10px;
 float:left;
 margin: 1rem;}
 
-.wiki1 , .wiki2{
+h2 , a , h3, li , ul , span{
+color: #ffffff;
+font-family: 'League Spartan', sans-serif;
+}
+h2{
+background-color: #0df6f0;
+font-size:1.7vw;}
+ul{
+  margin: 1rem;
+  font-size:1vw;
+  background-color: #3d51bf;
+  box-shadow: #00000023 1px 10px;
+  border: #2a40bf solid 0.7rem;
+}	
+.text-transform{
+  font-size: 6vw;
+  transform:perspective(750px) translate3d(0px, 0px, -250px) rotateX(27deg) scale(0.9, 0.9);;}
+/* here it ends for fonts */ 
+
+/* all below just for typing animation*/ 
+
+.typing-container{
+    overflow: hidden;
+    align-self: center;
+    justify-self:center;
+}
+.typing-container .text{
+    position: relative;
+    color: #2a40bf;
+    font-size: 4vw;
+    font-weight: 600;
+}
+.typing-container .text.first-text{
+    color: #FFF;
+}
+.text.sec-text:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #2a8bbf;
+    border-left: 2px solid #2a40bf;
+    animation: animate 4s steps(12) infinite;
+}
+@keyframes animate{
+    40%, 60%{
+        left: calc(100% + 4px);
+    }
+    100%{
+        left: 0%;
+    }
+}
+
+
+/* here it ends for typing ani */
+
+
+
+
+.wiki1 , .wiki2{ /* all below just for images */ 
     max-height: 336px;
     height: auto;  
     clear: both;
@@ -91,8 +172,19 @@ margin: 1rem;}
     padding: 0.7rem;
     box-shadow: #00000023 1px 10px;
     z-index: 3;
-/* all below just for navigationbar*/ 
+
 }
+img {
+  max-width: 100%;
+  height: auto;
+  display: inline;
+  box-shadow: #00000023 1px 10px;
+} /* here it ends for images*/ 
+
+
+
+
+/* all below just for navigationbar*/ 
 .sidebar{
   height: 100%;
   width: 0%;
@@ -139,32 +231,22 @@ margin: 1rem;}
   font-size: 36px;
   margin-left: 50px;
 } /* here it ends  */ 
-h2 , a , h3, li , ul , span{
-color: #ffffff;
-font-family: 'League Spartan', sans-serif;
-}
-h2{
-background-color: #0df6f0;
-font-size:1.7vw;}
-ul{
-  margin: 1rem;
-  font-size:1vw;
-  background-color: #3d51bf;
-  box-shadow: #00000023 1px 10px;
-  border: #2a40bf solid 0.7rem;
-}
-img {
-  max-width: 100%;
-  height: auto;
-  display: inline;
-  box-shadow: #00000023 1px 10px;
-}
+
+
 
         </style>
     </head>
     <body>
         <div class="container">
-            <div class="Erklarung" id="erklarung-id">  <!-- erklarung div  start -->
+          <div class="Landing-page">
+
+             <section class="typing-container">
+              <span class="text first-text">Website</span>
+              <span class="text sec-text">die CSS erklärt</span> 
+              
+             </section>
+          </div>
+            <div class="Erklarung" id="erklarung-id" style="margin-top: 0px;">  <!-- erklarung div  start -->
                 <section>
                     <h1 class="h1"> Websites mit CSS/ohne CSS</h1>
                     
@@ -260,7 +342,7 @@ img {
 
                 </ul>
             </div>
-            <div class="css-explain">
+            <div  id="css-id" class="css-explain">
               <h1 style="margin-bottom: 1em;">CSS Basics</h1>
               <img  src="css-website/css-rule.de.png" alt="css" style="background-color: #ffffffa4;border: #0d7af6 10px solid;float: right;">
               <p >Ein<span style="color: #0df6f0;">Selektor</span>sagt welches element verändert wird <br>
@@ -271,11 +353,21 @@ img {
                                 </p>
             </div>
             <div class="try-yourself">try</div>
-            <div class="cs-fotos"><h1>CSS Styles</h1>
-             <p>Hier sind ein paar beispiel styles: <span style="color:#0df6f0;"> <br> color ändert farbe<br> width ändert breite<br>height ändert höhe <br> font-size ändert größe der Schrift 
+            <div class="cs-fotos" style="margin-top: 1em;"><h1>CSS Styles</h1>
+             <p>Hier sind ein paar beispiel styles (Eigenschaften): <span style="color:#0df6f0;"> <br> color ändert farbe<br> width ändert breite<br>height ändert höhe <br> font-size ändert größe der Schrift 
              <br>margin macht raum um das Element
-             <br>(kannst spezifisch auch margin-top,margin-bottom,margin-right benutzen )</span></p></div>
-            <div class="advanced-tipps">tipps</div>
+             <br>(kannst spezifisch auch margin-top,margin-bottom,margin-right benutzen )</span> <br>
+              Unten kannst du versuchen die styles anzuwenden</p>
+            
+             <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="zYmXKYJ" data-editable="true" data-user="nenthHD" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+              <span>See the Pen <a href="https://codepen.io/nenthHD/pen/zYmXKYJ">
+              Untitled</a> by NenthHD (<a href="https://codepen.io/nenthHD">@nenthHD</a>)
+              on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+            <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+            
+            </div>
+            <div class="advanced-tipps">tipps      </div>
           </div>
           <div id="navbar" class="sidebar">
 
@@ -294,8 +386,10 @@ img {
               <a href="#test-id">Teste-dich</a>
               <script src="css-website/navbar-javascript.js"></script>
               <script src="css-website/image-change-javascript.js" ></script>
-              <script src="css-website/screen-sze.js"></script>
+              <script src="css-website/screen-ize.js"></script>
+              <script src="css-website/typing.js"></script>
   
           </div>
+
     </body>
 </html>
